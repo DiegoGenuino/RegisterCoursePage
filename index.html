@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Curso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <h1>BEM VINDO AO PAINEL DE <span>CADASTRAR CURSO</span></h1>
+
+            <div class="user-profile">
+                <div id="user-avatar-profile" class="avatar"></div>
+                <p id="user-name-profile">DIEGO GENUINO</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <form action="" class="user-form">
+                <h2>Insira as seguintes informações para cadastrar um curso</h2>
+                <p class="required-fields">Todos os campos são obrigatórios</p>
+
+                <div class="form-group">
+                    <label>NOME DO CURSO</label>
+                    <input type="text" id="courseName" required placeholder="DIGITE O NOME DO CURSO">
+                </div>
+
+                <div class="form-group">
+                    <label>TIPO</label>
+                    <select id="courseType" required placeholder="Digite o nome do curso">
+                        <option value="tecnico">TÉCNICO</option>
+                        <option value="cai">CAI</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>CARGA HORÁRIA</label>
+                    <input type="text" id="workload" placeholder="DIGITE A CARGA HORÁRIA TOTAL DO CURSO">
+                </div>
+
+                <div class="form-group">
+                    <label>TOLERÂNCIA</label>
+                    <input type="text" id="tolerance" placeholder="DIGITE O LIMITE DE TOLERÂNCIA EM MINUTOS">
+                </div>
+
+                <div class="form-group">
+                    <label>UNIDADES CURRICULARES</label>
+                    <div class="curriculum-units">
+                        <div class="units-list" id="unitsList">
+                            <!-- Units will be added here dynamically -->
+                        </div>
+                        <button id="addUnitBtn" class="add-button">ADICIONAR</button>
+                    </div>
+                </div>
+
+                <button class="register-button">CADASTRAR CURSO</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="unitModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Digite o nome da unidade curricular</h2>
+            <div class="modal-form">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" id="unitName">
+                </div>
+                <div class="form-group">
+                    <label>Carga horária total</label>
+                    <input type="text" id="unitWorkload">
+                </div>
+                <div class="modal-buttons">
+                    <button id="addMoreBtn" class="add-more-button">ADICIONAR MAIS</button>
+                    <button id="finishBtn" class="finish-button">TERMINAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
