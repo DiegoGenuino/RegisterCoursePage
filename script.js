@@ -5,6 +5,25 @@ const closeBtn = document.getElementsByClassName('close')[0];
 const addMoreBtn = document.getElementById('addMoreBtn');
 const finishBtn = document.getElementById('finishBtn');
 const unitsList = document.getElementById('unitsList');
+const userNameProfile = document.getElementById("user-name-profile");
+const userAvatarprofile = document.getElementById("user-avatar-profile");
+
+
+document.addEventListener("DOMContentLoaded", fetchUserProfile);
+
+async function fetchUserProfile() {
+    try {
+        fetch("https://randomuser.me/api/")
+            .then(response => response.json())
+            .then(user => {
+                userNameProfile.innerHTML = `${user.results[0].name.first}` + " " + `${user.results[0].name.last}`
+                userAvatarprofile.style.backgroundImage = `url(${user.results[0].picture.large})`
+                userAvatarprofile.innerHTML = "";
+            });
+    } catch (eror) {
+        console.error("Erro ao buscar dados do usuário:", error)
+    }
+}
 
 // Array to store curriculum units
 let curriculumUnits = [];
@@ -65,6 +84,10 @@ function updateUnitsList() {
         `;
         unitsList.appendChild(unitElement);
     });
+}
+
+function removeUnitFromList(id) {
+    unitsList.remove()
 }
 
 // Function to clear modal inputs
